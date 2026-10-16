@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nguyễn Ngọc Huyền Diệu – Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
+<style>
+:root{
+  --paper:#F6F8F5;--ink:#1B2A22;--muted:#56645C;--line:#D5DDD6;--card:#FFFFFF;
+  --red:#C92A2A;--green:#2C5A42;--tang:#F2A154;--yellow:#F7C948;
+  --display:"Bricolage Grotesque","Liberation Sans",Arial,sans-serif;
+  --body:"Be Vietnam Pro","Liberation Sans",Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#111915;--ink:#EAF0EB;--muted:#9DAFA3;--line:#2C3A32;--card:#18231D}}
+:root[data-theme="dark"]{--paper:#111915;--ink:#EAF0EB;--muted:#9DAFA3;--line:#2C3A32;--card:#18231D}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body)}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--tang);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:500;font-size:15px}
+.top nav{display:flex;gap:22px}
+.top a{text-decoration:none}.top a:hover{text-decoration:underline}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding:36px 0 72px}
+.hero h1{font-size:clamp(52px,9vw,112px);font-weight:800;letter-spacing:-.03em}
+.hero .lead{font-size:19px;margin-top:22px;color:var(--muted);max-width:44ch}
+.stickers{display:grid;gap:18px}
+.sticker{display:block;text-decoration:none;padding:22px 24px;border-radius:26px;color:#fff;transition:transform .2s}
+.sticker:hover{transform:rotate(0) translateY(-3px)}
+.sticker.s1{background:var(--red);transform:rotate(-2.2deg)}
+.sticker.s2{background:var(--green);transform:rotate(1.6deg);margin-left:28px}
+.sticker b{font:800 28px/1.1 var(--display);display:block}
+.sticker span{display:block;font-size:14px;margin-top:6px;opacity:.95}
+
+/* sections */
+section{padding:64px 0}
+.about{border-top:1px solid var(--line)}
+.about h2,.skills h2,.contact h2{font-size:clamp(30px,4vw,44px);margin-bottom:20px}
+.band{color:#fff;padding:72px 0}
+.band.red{background:var(--red)}
+.band.green{background:var(--green)}
+.band h2{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-.02em}
+.band .meta{margin:14px 0 32px;font-size:15px;opacity:.95}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.band h3{font-size:22px;margin:0 0 12px}
+.band ul{margin:0 0 18px;padding-left:20px}.band li{margin-bottom:8px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:34px}
+.fact{background:rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;font-size:14.5px;line-height:1.45}
+.fact b{display:block;font:800 26px/1.1 var(--display);margin-bottom:4px;color:var(--yellow)}
+.green .fact b{color:var(--tang)}
+.note{font-size:14px;opacity:.9;margin-top:22px}
+
+/* skills */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.skill h3{font-size:19px;margin-bottom:6px}
+.skill p{font-size:15px;color:var(--muted);margin:0}
+.contact{border-top:1px solid var(--line)}
+.contact dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 24px;margin:0}
+.contact dt{font-weight:600}.contact dd{margin:0;color:var(--muted)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:32px}
+  .cols{grid-template-columns:1fr;gap:8px}
+  .sticker.s2{margin-left:12px}
+  .top nav{gap:14px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sticker{transition:none}}
+
+/* print → PDF */
+@page{size:A4;margin:12mm}
+@media print{
+  body{font-size:10pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .top nav,.sticker span{display:none}
+  .top{padding:0 0 6px}
+  .wrap{max-width:none;padding:0}
+  .hero{padding:10mm 0 12mm;grid-template-columns:1.3fr 1fr}
+  .hero h1{font-size:46pt}
+  .hero .lead{font-size:12pt}
+  section{padding:8mm 0}
+  .band{padding:10mm 8mm;break-before:page;break-inside:avoid;border-radius:6mm}
+  .band h2{font-size:30pt}
+  .band .meta{margin:3mm 0 6mm}
+  .fact{break-inside:avoid;padding:8px 10px;font-size:9pt}
+  .fact b{font-size:15pt}
+  .skill,.fact{break-inside:avoid}
+  .grid{grid-template-columns:1fr 1fr}
+  .skills{break-before:page}
+  .stickers a{color:#fff}
+  a{text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><strong>Huyền Diệu</strong>
+    <nav><a href="#chicky">Chicky Tacos</a><a href="#quyt">Một Lạng Quýt</a><a href="#skills">Kỹ năng</a><a href="#contact">Liên hệ</a></nav>
+  </header>
+  <div class="hero">
+    <div>
+      <h1>Nguyễn Ngọc Huyền Diệu</h1>
+      <p class="lead">Sinh viên Khoa Quản trị Kinh doanh, Đại học Ngoại thương. Hai dự án kinh doanh đã làm cùng nhóm: một cửa hàng thương mại điện tử bán walking tacos, và một thương hiệu đặc sản chế biến từ quýt Bắc Sơn.</p>
+    </div>
+    <div class="stickers">
+      <a class="sticker s1" href="#chicky"><b>Chicky Tacos</b><span>Mô hình thương mại điện tử cho món ăn đường phố · 2025</span></a>
+      <a class="sticker s2" href="#quyt"><b>Một Lạng Quýt</b><span>Kế hoạch khởi sự kinh doanh đặc sản Lạng Sơn · 2026</span></a>
+    </div>
+  </div>
+</div>
+
+<section class="about"><div class="wrap">
+  <h2>Giới thiệu</h2>
+  <p>Tôi làm việc nhóm trên các dự án kinh doanh từ khâu nghiên cứu thị trường đến thiết kế trải nghiệm khách hàng và lập kế hoạch tài chính. Ở cả hai dự án dưới đây tôi là thành viên của nhóm sáng lập, và phần việc cụ thể của tôi được ghi riêng trong từng dự án.</p>
+</div></section>
+
+<div class="band red" id="chicky"><div class="wrap">
+  <h2>Chicky Tacos</h2>
+  <p class="meta">Tiểu luận giữa kỳ môn Thương mại điện tử · nhóm 6 người · GVHD: ThS. Nguyễn Phương Chi · Hà Nội, 06/2025</p>
+  <div class="cols">
+    <div>
+      <h3>Dự án</h3>
+      <p>Cửa hàng bán walking tacos (taco ăn trực tiếp trong túi snack) cho sinh viên và Gen Z tại Hà Nội, bán chủ yếu qua sàn thương mại điện tử và ứng dụng giao đồ ăn. Khách tự ghép món từ snack (Oishi 8K, O'Star 18K, Lays 18K, Doritos 30K), sốt và topping.</p>
+      <p>Nhóm làm trọn chuỗi: khảo sát, chọn nguồn cung, thiết kế website, nhận diện thương hiệu và chạy chiến dịch truyền thông thật trên fanpage.</p>
+    </div>
+    <div>
+      <h3>Phần việc của tôi</h3>
+      <ul>
+        <li>Thiết kế và triển khai biểu mẫu khảo sát 18 câu về mức độ biết đến, thói quen ăn nhanh, mức giá và ý định thử walking tacos của sinh viên Hà Nội.</li>
+        <li>Phân tích kết quả khảo sát về nhu cầu và thái độ người tiêu dùng, làm cơ sở cho phân khúc thị trường và chân dung khách hàng.</li>
+        <li>Thiết kế giao diện website bản máy tính trên Canva (trang chủ, giới thiệu, sản phẩm, liên hệ).</li>
+        <li>Tham gia sản xuất ấn phẩm trong lịch đăng bài ra mắt 27/05–08/06/2025.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>83,5%</b>sinh viên khảo sát đã từng nghe đến walking taco</div>
+    <div class="fact"><b>Hơn 90%</b>chắc chắn hoặc có thể sẽ thử (28,6% + 61,9%)</div>
+    <div class="fact"><b>56,6%</b>chấp nhận mức giá 30.000–40.000 VNĐ một phần</div>
+    <div class="fact"><b>2,3K lượt xem</b>tuần đầu của fanpage, 697 người tiếp cận, 109 tương tác, 42 người theo dõi, không chạy quảng cáo</div>
+  </div>
+  <p class="note">Số liệu khảo sát và fanpage là kết quả của cả nhóm, lấy từ báo cáo dự án.</p>
+</div></div>
+
+<div class="band green" id="quyt"><div class="wrap">
+  <h2>Một Lạng Quýt</h2>
+  <p class="meta">Báo cáo khởi sự kinh doanh môn QTR309 · nhóm 10, 7 thành viên · GVHD: ThS. Bùi Kim Hà · Hà Nội, 09/2026</p>
+  <div class="cols">
+    <div>
+      <h3>Dự án</h3>
+      <p>Thương hiệu đặc sản biến quýt Bắc Sơn (Lạng Sơn), vốn chỉ thu hoạch vài tuần mỗi năm, thành ba sản phẩm dùng quanh năm: mứt từ thịt quả, trà Shan tuyết từ vỏ và tinh dầu quýt. Mỗi lô có mã QR truy xuất nguồn gốc.</p>
+      <p>Giá bán lẻ dự kiến: mứt 99.000đ, tinh dầu 129.000đ, trà 249.000đ, combo quà tặng 459.000đ. Sản xuất gia công tại HTX chế biến nông sản hữu cơ Lạng Sơn.</p>
+    </div>
+    <div>
+      <h3>Vai trò của tôi</h3>
+      <ul>
+        <li>Thành viên sáng lập, góp 150 triệu đồng (15%) trong tổng vốn điều lệ 1 tỷ đồng của công ty TNHH.</li>
+        <li>Đảm nhận nghiên cứu thị trường và lập kế hoạch marketing: bảng hỏi khảo sát, phân đoạn thị trường B2C và B2B, định vị và điểm bán hàng độc đáo, marketing mix, chiến dịch năm đầu với ngân sách 300 triệu đồng.</li>
+        <li>Mức đóng góp trong bảng đánh giá nhóm: 100%.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>3,50 điểm</b>trên ma trận CPM, ngang Puluong Cuisine và cao hơn Befine (3,10), HTX Sen Mường Khương (3,15)</div>
+    <div class="fact"><b>2,37 tỷ đồng</b>doanh thu năm đầu dự phóng từ 17.900 sản phẩm</div>
+    <div class="fact"><b>Lỗ 624 triệu đồng</b>trước thuế năm đầu theo dự phóng; nhóm tính ra hòa vốn sau 18 tháng</div>
+    <div class="fact"><b>161,4 triệu đồng</b>vốn đầu tư ban đầu, phần còn lại của 1 tỷ làm vốn lưu động</div>
+  </div>
+  <p class="note">Các con số tài chính là dự phóng trong báo cáo của nhóm, không phải kết quả kinh doanh thực tế.</p>
+</div></div>
+
+<section class="skills" id="skills"><div class="wrap">
+  <h2>Kỹ năng qua hai dự án</h2>
+  <div class="grid">
+    <div class="skill"><h3>Nghiên cứu thị trường</h3><p>Thiết kế bảng hỏi, đọc dữ liệu khảo sát, phân khúc theo nhân khẩu học, hành vi, tâm lý và dựng chân dung khách hàng.</p></div>
+    <div class="skill"><h3>Thiết kế trải nghiệm web</h3><p>Dựng giao diện website bán hàng bằng Canva, tách bố cục máy tính và điện thoại, đặt thao tác đặt món rõ ràng.</p></div>
+    <div class="skill"><h3>Truyền thông mạng xã hội</h3><p>Lên lịch đăng, làm ấn phẩm, theo dõi chỉ số fanpage bằng Meta Business Suite.</p></div>
+    <div class="skill"><h3>Phân tích chiến lược</h3><p>PESTEL, năm áp lực cạnh tranh của Porter, ma trận CPM và chiến lược khác biệt hóa theo thị trường ngách.</p></div>
+    <div class="skill"><h3>Kế hoạch tài chính</h3><p>Dự phóng doanh thu, chi phí cố định, báo cáo kết quả kinh doanh và phân tích điểm hòa vốn.</p></div>
+    <div class="skill"><h3>Làm việc nhóm</h3><p>Phân công theo mốc thời hạn, check chéo nội dung và hoàn thiện báo cáo chung với nhóm 6 và 7 người.</p></div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2>Liên hệ</h2>
+  <dl>
+    <dt>Email</dt><dd><a href="mailto:huyendieunn1682@gmail.com">huyendieunn1682@gmail.com</a></dd>
+    <dt>Trường</dt><dd>Đại học Ngoại thương, Hà Nội</dd>
+  </dl>
+</div></section>
+<footer><div class="wrap">Nguyễn Ngọc Huyền Diệu · Portfolio 2026</div></footer>
+</body>
+</html>
